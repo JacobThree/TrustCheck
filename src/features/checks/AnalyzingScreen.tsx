@@ -4,7 +4,7 @@ import { AppHeader } from "../../components/AppHeader";
 import { ProgressIndicator } from "../../components/ProgressIndicator";
 import { usePrototypeState } from "../../app/PrototypeState";
 import type { InputType } from "../../types/trustcheck";
-import { mockAnalyze } from "./mockAnalyze";
+import { mockAnalyze, mockFailure } from "./mockAnalyze";
 
 // S09 / S15 / S21 / S26 — Checking states, one per input type.
 const copy: Record<InputType, { title: string; steps: string[] }> = {
@@ -29,13 +29,20 @@ const copy: Record<InputType, { title: string; steps: string[] }> = {
 const STEP_MS = 900;
 
 export function AnalyzingScreen() {
-  const { draft, recordCheck } = usePrototypeState();
+  const { draft, recordCheck, simulateOutage } = usePrototypeState();
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const steps = draft ? copy[draft.type].steps : [];
+  const failure = draft ? mockFailure(draft.type, draft.content, simulateOutage) : null;
+  const failAt = failure?.atStep;
+  const failPath = failure?.path;
 
   useEffect(() => {
     if (!draft) return;
+    if (failPath && step === failAt) {
+      navigate(failPath, { replace: true }); // E-03 / E-04
+      return;
+    }
     if (step < steps.length) {
       const t = setTimeout(() => setStep((s) => s + 1), STEP_MS);
       return () => clearTimeout(t);
@@ -43,7 +50,7 @@ export function AnalyzingScreen() {
     const scenario = mockAnalyze(draft.type, draft.content);
     recordCheck(scenario, draft.type === "qr" ? `QR code → ${draft.content}` : draft.content);
     navigate(`/prototype/result/${scenario.id}`, { replace: true });
-  }, [draft, step, steps.length, recordCheck, navigate]);
+  }, [draft, step, steps.length, failAt, failPath, recordCheck, navigate]);
 
   if (!draft) return <Navigate to="/prototype/home" replace />;
 

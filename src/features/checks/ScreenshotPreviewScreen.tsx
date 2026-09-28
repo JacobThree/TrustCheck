@@ -3,6 +3,7 @@ import { AppHeader } from "../../components/AppHeader";
 import { PrimaryButton, SecondaryButton } from "../../components/Button";
 import { usePrototypeState } from "../../app/PrototypeState";
 import { MockScreenshot } from "./MockScreenshot";
+import { BLURRY_SCREENSHOT } from "./mockAnalyze";
 
 // S25 — Screenshot preview
 export function ScreenshotPreviewScreen() {
@@ -13,7 +14,7 @@ export function ScreenshotPreviewScreen() {
     <div className="screen">
       <AppHeader title="Is this the right picture?" back="/prototype/check/screenshot" />
       <div className="screen-content">
-        <MockScreenshot />
+        <MockScreenshot blurred={draft.content === BLURRY_SCREENSHOT} />
         <p className="body-text muted">TrustCheck will read the words in this picture.</p>
       </div>
       <div className="screen-footer button-stack">

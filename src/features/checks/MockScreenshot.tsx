@@ -5,14 +5,17 @@ import { Fragment } from "react";
 const text =
   "USPS: Your package could not be delivered. Pay the $1.99 redelivery fee within 12 hours at usps-redelivery-fee.example to reschedule.";
 
-export function MockScreenshot({ highlights = [] }: { highlights?: string[] }) {
+export function MockScreenshot({ highlights = [], blurred = false }: { highlights?: string[]; blurred?: boolean }) {
   const pattern = highlights.length
     ? new RegExp(`(${highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`)
     : null;
   const parts = pattern ? text.split(pattern) : [text];
 
   return (
-    <figure className="mock-screenshot" aria-label="Screenshot of a text message">
+    <figure
+      className={`mock-screenshot${blurred ? " is-blurred" : ""}`}
+      aria-label={blurred ? "Blurry screenshot of a text message" : "Screenshot of a text message"}
+    >
       <div className="mock-screenshot-sender">+1 (555) 013-2291</div>
       <div className="mock-screenshot-bubble">
         {parts.map((part, i) =>

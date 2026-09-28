@@ -16,6 +16,8 @@ npm run dev
 
 Other scripts: `npm run build`, `npm run typecheck`, `npm run preview`.
 
+`npm run screenshots` captures 30 screens at 390 × 844 into `docs/screenshots/` and lays them out as a 5 × 6 [grid](docs/screenshots/grid.png). It drives your installed Google Chrome; edit the `shots` list in [scripts/screenshots.mjs](scripts/screenshots.mjs) to change which screens appear.
+
 ## How it's organized
 
 | Path | What's there |
@@ -27,7 +29,7 @@ Other scripts: `npm run build`, `npm run typecheck`, `npm run preview`.
 | `src/pages/` | Portfolio page and prototype layouts |
 | `src/types/` | Domain types (spec §11, §14) |
 
-Analysis is simulated: `src/features/checks/mockAnalyze.ts` matches input text to a fixture in `src/data/scenarios.ts`. Every input screen has a **Use an example** option that triggers the demo scenario for that workflow.
+Analysis is simulated: `src/features/checks/mockAnalyze.ts` matches input text to a fixture in `src/data/scenarios.ts`. Every input screen has a **Use an example** option that triggers the demo scenario for that workflow. To demo the error states, pick **Use a blurry example** on the screenshot screen (E-03), or turn on **Settings → Simulate a failed check** (E-04).
 
 History and settings are kept in memory and reset on page reload.
 

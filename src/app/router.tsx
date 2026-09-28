@@ -13,6 +13,8 @@ import { QrDetectedScreen } from "../features/checks/QrDetectedScreen";
 import { ScreenshotSourceScreen } from "../features/checks/ScreenshotSourceScreen";
 import { ScreenshotPreviewScreen } from "../features/checks/ScreenshotPreviewScreen";
 import { AnalyzingScreen } from "../features/checks/AnalyzingScreen";
+import { UnreadableScreenshotScreen } from "../features/checks/UnreadableScreenshotScreen";
+import { AnalysisUnavailableScreen } from "../features/checks/AnalysisUnavailableScreen";
 import { ResultScreen } from "../features/results/ResultScreen";
 import { FindingDetailScreen } from "../features/results/FindingDetailScreen";
 import { NextStepsScreen } from "../features/results/NextStepsScreen";
@@ -27,7 +29,7 @@ import { LessonDetailScreen } from "../features/learn/LessonDetailScreen";
 import { SettingsScreen } from "../features/settings/SettingsScreen";
 import { PrivacyScreen } from "../features/settings/PrivacyScreen";
 
-// Route map from spec §26. Screen IDs (S01–S34) from spec §19.
+// Route map from spec §26. Screen IDs (S01–S34) from spec §19, error states (E-xx) from §22.
 export const router = createBrowserRouter([
   { path: "/", element: <PortfolioPage /> },
   { path: "/portfolio", element: <Navigate to="/" replace /> },
@@ -61,6 +63,8 @@ export const router = createBrowserRouter([
           { path: "check/qr/detected", element: <QrDetectedScreen /> }, // S20
           { path: "check/screenshot", element: <ScreenshotSourceScreen /> }, // S24
           { path: "check/screenshot/preview", element: <ScreenshotPreviewScreen /> }, // S25
+          { path: "check/screenshot/unreadable", element: <UnreadableScreenshotScreen /> }, // E-03
+          { path: "check/unavailable", element: <AnalysisUnavailableScreen /> }, // E-04
           { path: "analyzing", element: <AnalyzingScreen /> }, // S09, S15, S21, S26
           { path: "result/:scenarioId", element: <ResultScreen /> }, // S10, S16, S22, S27
           { path: "result/:scenarioId/finding/:findingId", element: <FindingDetailScreen /> }, // S11

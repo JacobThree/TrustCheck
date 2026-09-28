@@ -1,10 +1,13 @@
 import { ChevronRight, Lock } from "lucide-react";
 import { Link } from "react-router";
+import { AccessibilityToggle } from "../../components/AccessibilityToggle";
 import { AppHeader } from "../../components/AppHeader";
+import { usePrototypeState } from "../../app/PrototypeState";
 import { AccessibilityControls } from "./AccessibilityControls";
 
 // S33 — Settings
 export function SettingsScreen() {
+  const { simulateOutage, setSimulateOutage } = usePrototypeState();
   return (
     <div className="screen">
       <AppHeader title="Settings" />
@@ -22,6 +25,13 @@ export function SettingsScreen() {
           </span>
           <ChevronRight aria-hidden size={20} className="card-chevron" />
         </Link>
+        <h2 className="section-title">Prototype demo</h2>
+        <AccessibilityToggle
+          label="Simulate a failed check"
+          description="Shows what happens when TrustCheck cannot finish a check"
+          checked={simulateOutage}
+          onChange={setSimulateOutage}
+        />
         <Link to="/prototype/onboarding/1" className="text-link">
           Replay the introduction
         </Link>

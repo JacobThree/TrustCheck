@@ -24,6 +24,21 @@ export function mockAnalyze(type: InputType, content: string): TrustCheckScenari
   }
 }
 
+export const BLURRY_SCREENSHOT = "blurry-screenshot";
+
+// Prototype triggers for E-03 and E-04: which checking step fails, and where to go.
+export function mockFailure(
+  type: InputType,
+  content: string,
+  simulateOutage: boolean,
+): { atStep: number; path: string } | null {
+  if (simulateOutage) return { atStep: 2, path: "/prototype/check/unavailable" };
+  if (type === "screenshot" && content === BLURRY_SCREENSHOT) {
+    return { atStep: 1, path: "/prototype/check/screenshot/unreadable" };
+  }
+  return null;
+}
+
 // Loose check for E-02. Accepts bare domains like "example.com/path".
 export function looksLikeLink(value: string): boolean {
   return /^(https?:\/\/)?[\w-]+(\.[\w-]+)+(\/\S*)?$/i.test(value.trim());

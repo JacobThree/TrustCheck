@@ -939,3 +939,15 @@ textarea {
   border-radius: var(--radius);
   color: var(--text-muted);
 }
+
+/* ---------- Error states (spec §22) ---------- */
+
+.error-icon {
+  margin-top: 16px;
+  color: var(--unknown);
+}
+
+.mock-screenshot.is-blurred .mock-screenshot-sender,
+.mock-screenshot.is-blurred .mock-screenshot-bubble {
+  filter: blur(3.5px);
+}

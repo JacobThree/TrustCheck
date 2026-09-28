@@ -20,6 +20,8 @@ type PrototypeState = {
   setDraft: (draft: Draft | null) => void;
   history: HistoryEntry[];
   recordCheck: (scenario: TrustCheckScenario, preview: string) => void;
+  simulateOutage: boolean; // Prototype-only switch that forces E-04
+  setSimulateOutage: (on: boolean) => void;
 };
 
 const defaultSettings: AccessibilitySettings = {
@@ -54,6 +56,7 @@ export function PrototypeStateProvider({ children }: { children: ReactNode }) {
   const [onboarded, setOnboarded] = useState(false);
   const [draft, setDraft] = useState<Draft | null>(null);
   const [history, setHistory] = useState(seedHistory);
+  const [simulateOutage, setSimulateOutage] = useState(false);
 
   const updateSettings = useCallback(
     (patch: Partial<AccessibilitySettings>) => setSettings((s) => ({ ...s, ...patch })),
@@ -83,8 +86,10 @@ export function PrototypeStateProvider({ children }: { children: ReactNode }) {
       setDraft,
       history,
       recordCheck,
+      simulateOutage,
+      setSimulateOutage,
     }),
-    [settings, updateSettings, onboarded, completeOnboarding, draft, history, recordCheck],
+    [settings, updateSettings, onboarded, completeOnboarding, draft, history, recordCheck, simulateOutage],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
