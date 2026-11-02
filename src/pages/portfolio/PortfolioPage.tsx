@@ -4,7 +4,7 @@ import { Link } from "react-router";
 // Presentation site (spec §28). Section bodies are placeholders for the group to
 // fill with their own research, sketches, and screenshots (spec §35).
 const sections = [
-  { id: "problem", title: "The problem", todo: "PRES-02: what users struggle with and why warnings fail." },
+  { id: "problem", title: "The problem", todo: "Many people receive suspicious text messages, emails, QR codes, and website links everyday but struggle to determine whether or not they are legitimate. Exisiting secueity tools often present domain names, certificates, or warnings which requires technical knowledge to interpret and may cause users to ignore such warnings. TrustCheck addresses this gap by translating technical risk indicators into plaintext language and actionable guidance. " },
   { id: "users", title: "Who we designed for", todo: "PRES-03: primary audience, needs, frustrations, accessibility." },
   { id: "research", title: "What we learned", todo: "PRES-04: strongest verified research findings." },
   { id: "existing", title: "Existing tools", todo: "PRES-05: current tool / what it does / what stays hard." },
