@@ -4,8 +4,8 @@ import { Link } from "react-router";
 // Presentation site (spec §28). Section bodies are placeholders for the group to
 // fill with their own research, sketches, and screenshots (spec §35).
 const sections = [
-  { id: "problem", title: "The problem", todo: "Many people receive suspicious text messages, emails, QR codes, and website links everyday but struggle to determine whether or not they are legitimate. Exisiting secueity tools often present domain names, certificates, or warnings which requires technical knowledge to interpret and may cause users to ignore such warnings. TrustCheck addresses this gap by translating technical risk indicators into plaintext language and actionable guidance. " },
-  { id: "users", title: "Who we designed for", todo: "We designed mainly for adults and older adults who have less cyberecurity literacy.", points: [
+  { id: "problem", title: "The problem", todo: "Many people receive suspicious text messages, emails, QR codes, and website links everyday but struggle to determine whether or not they are legitimate. Existing security tools often present domain names, certificates, or warnings which requires technical knowledge to interpret and may cause users to ignore such warnings. TrustCheck addresses this gap by translating technical risk indicators into plaintext language and actionable guidance. " },
+  { id: "users", title: "Who we designed for", todo: "We designed mainly for adults and older adults who have less cybersecurity literacy.", points: [
     `What they need: 1. Understand security risks without technical knowledge. 2. Receive clear explanations in everyday language. 3. Know what action to take next. 4. Quickly verify whether the content is trustworthy.`,
     `Common Frustrations: 1. Security warnings are often to vague or confusing. 2. Technical terms create uncertainty. 3. Users may feel overwhelmed  when making security decisions.`,
     `Accessibility Considerations: 1. Large readable text. 2. High contrast interface options. 3. Clear navigation and touch targets. 4. Reduced cognitive load withough simple workflows 5. Read aloud support for those who need auditory assistance.`,
