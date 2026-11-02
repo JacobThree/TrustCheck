@@ -10,21 +10,20 @@ const sections = [
     `Common Frustrations: 1. Security warnings are often to vague or confusing. 2. Technical terms create uncertainty. 3. Users may feel overwhelmed  when making security decisions.`,
     `Accessibility Considerations: 1. Large readable text. 2. High contrast interface options. 3. Clear navigation and touch targets. 4. Reduced cognitive load withough simple workflows 5. Read aloud support for those who need auditory assistance.`,
   ]},
-  { id: "research", title: "What we learned", todo: ` 1. Non-users often struggle to understand technical security language.
+  { id: "research", title: "What we learned", todo:  "1. Non-users often struggle to understand technical security language.
    2. Users are more likely to ignore long, information dense warnings.
   3. People respond better to clear recommendations than technical explanations.
   4. QR codes can be difficult to evaluate because they can conceal destinations until opened.
-  5. Users frequently overestimate the accuracy of automated security systems.` },
-  { id: "existing", title: "Existing tools", todo: `
-  1. Browser security warnings: Detects suspicious websites. Often provides minimal explanation
+  5. Users frequently overestimate the accuracy of automated security systems." },
+  { id: "existing", title: "Existing tools", todo: ` "1. Browser security warnings: Detects suspicious websites. Often provides minimal explanation
   2. Antivirus software: identifies known threats and uses technical language unfamiliar to many users.
   3. Email spam filters block many phishing messages but users still receive suspicious content and may not understand risks.
   4. QR scanners open destinations quickly but usually do not explain destination risks before opening.
-  5. Security Awareness resources: teach security concepts but do not make information available when users need immediate guidance.` },
-  { id: "gap", title: "The gap", todo: `Traditional approach: 1. detect suspicious content. 2. Display a warning. 3. Leaves the decision to the user.
-    TrustCheck Approach: 1. Detect suspicious content. 2. Explains warning signs in plain language. 3. Explain why those signs matter. 4. Recommend a safe next step action. 4. Teacher users how to verify information independently.` },
+  5. Security Awareness resources: teach security concepts but do not make information available when users need immediate guidance." },
+  { id: "gap", title: "The gap", todo: "Traditional approach: 1. detect suspicious content. 2. Display a warning. 3. Leaves the decision to the user.
+    TrustCheck Approach: 1. Detect suspicious content. 2. Explains warning signs in plain language. 3. Explain why those signs matter. 4. Recommend a safe next step action. 4. Teacher users how to verify information independently." },
   { id: "principles", title: "Design principles", todo: `
-    1. Recognition over Recall: Users are shown clear options, examples, and labels without having to remember cybersecurity terms.
+    "1. Recognition over Recall: Users are shown clear options, examples, and labels without having to remember cybersecurity terms.
     2. Progressive Disclosure: Most significant information is presented first and detailed explanations are provided later only if needed.
     3. Reduced Cognitive load: Information is simplified into short explanations and clear recommendations in order to prevent overwhelming the user.
     4. Provides Visual Feedback: When checking a suspicious link, QR code, or message, the interface provides feedback on the state of how TrustCheck analyzes it.` },
