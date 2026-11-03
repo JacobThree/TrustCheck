@@ -4,7 +4,8 @@ A mobile-first “Should I trust this?” assistant that explains why a message,
 
 - **Spec:** [spec/TrustCheck_Mobile_HCI_Spec.md](spec/TrustCheck_Mobile_HCI_Spec.md)
 - **Portfolio:** `/` (desktop-friendly presentation site)
-- **Prototype:** `/prototype` (phone-framed interactive prototype)
+- **Prototype:** `/figma` (the Figma prototype, embedded in a phone-shaped frame)
+- **Earlier code prototype:** `/prototype` (React version, kept for reference)
 - **Live site:** https://jacobthree.github.io/TrustCheck/
 
 ## Run it
