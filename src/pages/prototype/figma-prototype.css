@@ -1,0 +1,108 @@
+/* Figma prototype page. Uses the shared tokens from global.css. */
+
+.figma-page {
+  min-height: 100%;
+  padding: 24px var(--gutter) 40px;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.figma-header {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.figma-header h1 {
+  font-size: 1.75rem;
+}
+
+.figma-header p {
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+
+.figma-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  min-height: var(--tap);
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.figma-back:hover {
+  text-decoration: underline;
+}
+
+.figma-flows {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.figma-flow {
+  min-height: var(--tap);
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.figma-flow:hover {
+  border-color: var(--accent);
+}
+
+.figma-flow[aria-pressed="true"] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.figma-stage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Phone-shaped frame, 390 x 844 like the Figma screens. Shrinks on short or narrow screens. */
+.figma-frame {
+  width: min(100%, 390px, calc((100dvh - 220px) * 390 / 844));
+  min-width: 260px;
+  aspect-ratio: 390 / 844;
+  border: 10px solid var(--text);
+  border-radius: 36px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.figma-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.figma-fallback {
+  color: var(--text-muted);
+}
+
+.figma-fallback a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-strong);
+  font-weight: 600;
+}

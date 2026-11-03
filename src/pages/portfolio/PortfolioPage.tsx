@@ -9,7 +9,7 @@ const sections = [
     title: "The Problem",
     points: [
       "Many people receive suspicious text messages, emails, QR codes, and links every day.",
-      "However, they don't know how to tell whether or not the content is legitimate or not."
+      "However, they don't know how to tell whether or not the content is legitimate or not.",
       "Most existing security tools show things such as certificates, domain names, URL structure, threat scores. These signals are difficult for non-expert users to interpret. ",
       "TrustCheck will help bridge this gap through translating technical language into plaintext language and produce actionable guidance ."
     ]
@@ -21,7 +21,7 @@ const sections = [
     points: [
       "We mainly designed this for adults and older adults who may not feel confident with online security.",
       "Users Need:",
-      "*
+      "• "
     ]
   },
 
@@ -131,6 +131,7 @@ Optional: verify, learn, save, or report."`
     ]
   }
 ];
+
 export function PortfolioPage() {
   return (
     <div className="portfolio">
@@ -140,7 +141,7 @@ export function PortfolioPage() {
         <p className="portfolio-lede">
           A mobile assistant that helps people understand why something may be suspicious and what to do next.
         </p>
-        <Link to="/prototype" className="button button-primary portfolio-cta">
+        <Link to="/figma" className="button button-primary portfolio-cta">
           Launch Prototype
         </Link>
       </header>
@@ -155,50 +156,17 @@ export function PortfolioPage() {
         {sections.map((s) => (
           <section key={s.id} id={s.id} className="portfolio-section">
             <h2>{s.title}</h2>
-            <p className="placeholder">TODO — {s.todo}</p>
+            {s.points.map((point, i) => (
+              <p key={i} style={{ whiteSpace: "pre-line" }}>
+                {point}
+              </p>
+            ))}
           </section>
         ))}
         <section id="prototype" className="portfolio-section">
           <h2>Try the prototype</h2>
           <p>Four checking workflows, history, lessons, and accessibility settings — all with example data.</p>
-          <Link to="/prototype" className="button button-primary portfolio-cta">
-            Launch Prototype
-          </Link>
-        </section>
-      </main>
-    </div>
-  );
-export function PortfolioPage() {
-  return (
-    <div className="portfolio">
-      <header className="portfolio-hero">
-        <ShieldCheck aria-hidden size={48} className="brand-icon" />
-        <h1>TrustCheck</h1>
-        <p className="portfolio-lede">
-          A mobile assistant that helps people understand why something may be suspicious and what to do next.
-        </p>
-        <Link to="/prototype" className="button button-primary portfolio-cta">
-          Launch Prototype
-        </Link>
-      </header>
-      <nav className="portfolio-nav" aria-label="Sections">
-        {sections.map((s) => (
-          <a key={s.id} href={`#${s.id}`}>
-            {s.title}
-          </a>
-        ))}
-      </nav>
-      <main>
-        {sections.map((s) => (
-          <section key={s.id} id={s.id} className="portfolio-section">
-            <h2>{s.title}</h2>
-            <p className="placeholder">TODO — {s.todo}</p>
-          </section>
-        ))}
-        <section id="prototype" className="portfolio-section">
-          <h2>Try the prototype</h2>
-          <p>Four checking workflows, history, lessons, and accessibility settings — all with example data.</p>
-          <Link to="/prototype" className="button button-primary portfolio-cta">
+          <Link to="/figma" className="button button-primary portfolio-cta">
             Launch Prototype
           </Link>
         </section>

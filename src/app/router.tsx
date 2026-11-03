@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import { PortfolioPage } from "../pages/portfolio/PortfolioPage";
+import { FigmaPrototypePage } from "../pages/prototype/FigmaPrototypePage";
 import { PrototypeIndex, PrototypeLayout, TabLayout, TaskLayout } from "../pages/prototype/PrototypeLayout";
 import { OnboardingScreen } from "../features/onboarding/OnboardingScreen";
 import { HomeScreen } from "../features/checks/HomeScreen";
@@ -33,6 +34,7 @@ import { PrivacyScreen } from "../features/settings/PrivacyScreen";
 export const router = createBrowserRouter([
   { path: "/", element: <PortfolioPage /> },
   { path: "/portfolio", element: <Navigate to="/" replace /> },
+  { path: "/figma", element: <FigmaPrototypePage /> },
   {
     path: "/prototype",
     element: <PrototypeLayout />,
